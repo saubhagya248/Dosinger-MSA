@@ -15,10 +15,12 @@ public class Initializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        userRepository.save(User.builder()
+        User user = User.builder()
         .name("Saubhagya")
         .email("saubhagyagupta8@gmail.com")
-        .build());
+        .build();
+
+        userRepository.save(user);
     }
     
 }
