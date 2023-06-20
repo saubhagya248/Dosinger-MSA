@@ -6,4 +6,11 @@ spring:
   application:
     name:
       user-service
-
+    jpa:
+      hibernate:
+        ddl-auto:
+          create
+      generate-ddl:
+        true
+      defer-datasource-initialization:
+        true
