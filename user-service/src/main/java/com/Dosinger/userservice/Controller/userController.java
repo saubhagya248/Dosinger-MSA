@@ -1,16 +1,26 @@
 package com.Dosinger.userservice.Controller;
 
+import org.apache.hc.core5.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// @RestController
-// @RequestMapping("/user")
-// public class userController{
+import com.Dosinger.userservice.Model.User;
 
-//     @PostMapping("/add")
-//     public ResponseEntity addUser(@RequestBody User user){
-//         try{
+@RestController
+@RequestMapping("/user")
+public class userController{
 
-//         }
-//     }
-//}
+    @RequestMapping("/home")
+    public String greet(){
+        return "Hello";
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity addUser(@RequestBody User user){
+        return new ResponseEntity("Hello User", HttpStatusCode.valueOf(200));
+    }
+}
