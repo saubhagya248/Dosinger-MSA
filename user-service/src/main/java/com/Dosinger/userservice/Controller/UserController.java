@@ -12,7 +12,7 @@ import com.Dosinger.userservice.Model.User;
 
 @RestController
 @RequestMapping("/user")
-public class userController{
+public class UserController{
 
     @RequestMapping("/home")
     public String greet(){

@@ -1,32 +1,45 @@
 package com.Dosinger.userservice.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
+
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
+import com.Dosinger.userservice.Enums.Gender;
+
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "`user`")
 @Builder
-@Table(name="`user`")
-public class User{
-    
+public class User {
+
     @Id
-    @GeneratedValue
-    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     String name;
 
-    @Column(name="email")
+    @Column(name = "age")
+    int age;
+
+    @Column(name = "email", unique = true, nullable = false)
     String email;
+
+    @Column(name = "password", nullable = false)
+    String password;
+
+    
+    @Column(name = "mobile", unique = true, nullable = false)
+    String mobile;
+
+    @Column(name = "gender")
+    @Enumerated(EnumType.STRING)
+    Gender gender;
+
 
 }
