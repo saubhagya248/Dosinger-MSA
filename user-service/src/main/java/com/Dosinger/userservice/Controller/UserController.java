@@ -20,7 +20,7 @@ public class UserController{
     }
 
     @PostMapping("/add")
-    public ResponseEntity addUser(@RequestBody User user){
-        return new ResponseEntity("Hello User", HttpStatusCode.valueOf(200));
+    public String addUser(){
+        return "Hello User";
     }
 }

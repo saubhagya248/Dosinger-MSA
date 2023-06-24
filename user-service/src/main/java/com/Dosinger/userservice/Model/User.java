@@ -6,8 +6,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import org.springframework.stereotype.Component;
+
 import com.Dosinger.userservice.Enums.Gender;
 
+@Component
 @Entity
 @Data
 @AllArgsConstructor
