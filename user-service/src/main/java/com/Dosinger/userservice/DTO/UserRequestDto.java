@@ -2,6 +2,7 @@ package com.Dosinger.userservice.DTO;
 
 import com.Dosinger.userservice.Enums.Gender;
 
+import com.Dosinger.userservice.Enums.Role;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class UserRequestDto {
     String emailId;
     String mobile;
     Gender gender;
+    Role role;
     String password;
 
 }

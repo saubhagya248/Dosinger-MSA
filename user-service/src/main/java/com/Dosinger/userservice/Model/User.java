@@ -8,7 +8,7 @@ import lombok.experimental.FieldDefaults;
 
 import org.springframework.stereotype.Component;
 
-import com.Dosinger.userservice.Enums.Gender;
+import com.Dosinger.userservice.Enums.*;
 
 @Component
 @Entity
@@ -45,4 +45,7 @@ public class User {
     Gender gender;
 
 
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    Role role;
 }
